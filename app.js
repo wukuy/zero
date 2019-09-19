@@ -6,7 +6,7 @@ const app = new Koa()
 app.name = 'zero'
 
 useMiddleware(app)
-
-app.listen(process.env.PORT || config.port, () => {
-    console.log(`\n服务运行在:`.yellow.bold + ` http://localhost:${config.port}\n`.green);
+let port = process.env.PORT || config.port
+app.listen(port, () => {
+    console.log(`\n服务运行在:`.yellow.bold + ` http://localhost:${port}\n`.green);
 })
